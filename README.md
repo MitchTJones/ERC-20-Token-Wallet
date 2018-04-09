@@ -11,4 +11,5 @@ If you need to find the contract address, just go to [Etherscan](https://ethersc
 ## Why MetaMask?
 [MetaMask](https://metamask.io/) is a really great, easy-to-use, secure plugin for most modern browsers (Chrome, Firefox, Opera, etc.) that allows the browser to communicate with the Ethereum blockchain. Using MetaMask means you don't have to worry about security or compatibility, because pretty much everything difficult is handled smoothly and easily by the MetaMask plugin.
 
-[Working Product](https://www.lockepocket.com/)
+## Working Product
+[Locke Pocket](https://www.lockepocket.com/)
