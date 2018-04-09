@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+	<link rel='icon' type='image/png' href='/favicos/favicon.png'/>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+	<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+	<script src='https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'></script>
+	<link rel='stylesheet' href='/css/main.css'>
+	<title>ERC-20 Wallet Template</title>
+</head>
+<body>
+	<div id='topbar'>
+		<center><a href=''><img src='/img/logo.png' id='logo'></a></center>
+	</div>
+	<div id='wallet' class='container' style='display:none'>
+		<div class='container'>
+			<div class='row'>
+				<div class='section wide col'>
+					<h3 class='section-title'>Send</h3> 
+					<div class='inner'>
+						<div class='txDiv' style='margin-bottom:15px'>Address: <input class='txInput' type='text' id='txAddress'><br></div>
+						<div class='txDiv'>Amount: <input class='txInput' type='text' id='txAmount'><br><button class='btn' id='send'>Send Tokens</button></div>
+					</div>
+				</div>
+			</div>
+			<div class='row justify-content-between'>
+				<div class='col-7'>
+					<div class='section'>
+					<h3 class='section-title'>Receive</h3>
+						<div class='inner'>
+							<center><p><b>Public address:</b> <span id='eth-address'></span></p></center>
+							<center><img id='qr-address'></center>
+						</div>
+					</div>
+				</div>
+				<div class='col-4'>
+					<div class='section'>
+						<h3 class='section-title'>Balance</h3>
+						<div class='inner'>
+							<center><h1 id='balance'></h1></center>
+							<center><h3>TOKENS</h3></center>
+						</div>
+					</div>
+					<div class='section'>
+						<h3 class='section-title'>Resources</h3>
+						<div class='inner' id='resources'>
+							<a role='button' class='btn resource' id='blockexplorer'>Block Explorer</a>
+							<a role='button' class='btn resource disabled' href='' style='margin-top:10px'>FAQ</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='row'>
+				<div class='section wide col'>
+				<h3 class='section-title'>Transaction History</h3> 
+					<div id='txList' class='list-group'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='no-metamask' class='container' style='display:none'>
+		<center><div style='margin:20px;'>
+			<h1>This wallet requires MetaMask</h1>
+		</div>
+		<div>
+			<a id='dl-mm' href='#'>
+				<img src='/img/dl-metamask.png'>
+			</a>
+			<div style='margin:20px;'>
+				<div style='margin:10px;'>
+					<h1>What is MetaMask?</h1>
+					<p>MetaMask is an extension for Chrome, Opera, and Firefox that allows the browser to interact with the Ethereum blockchain. MetaMask also has a built in Ethereum wallet - this is the wallet that your tokens must be stored in to use this wallet.</p>
+				</div>
+				<div style='margin:10px;'>
+					<h1>Why do I need MetaMask?</h1>
+					<p>*token* is an ERC-20 token built on the Ethereum blockchain. This means that, in order to interact with the token, your browser must be able to interact with the Ethereum blockchain. The incredible security of the MetaMask wallet also ensures that your tokens will be as safe as possible.</p>
+				</div>
+				<div style='margin:10px;'>
+					<h1>Is MetaMask safe?</h1>
+					<p>MetaMask is extremely trusted and widely used by the Ethereum community. Your private keys are stored on your machine and encrypted with your MetaMask password, ensuring the security of your MetaMask Ethereum wallet. Many of the Ethereum community's most trusted Ethereum web applications use MetaMask for its ease-of-use and security, including <a href='https://www.myetherwallet.com/'>MyEtherWallet</a>. If you have any reservations about the security of MetaMask, feel free to review their <a href='https://github.com/MetaMask/metamask-plugin'>GitHub</a>. MetaMask is open source!</p>
+					<p>For more information, check out <a href='https://metamask.io/'>the MetaMask website</a>.</p>
+				</div>
+
+			</div>
+		</div></center>
+	</div>
+	<div id='not-logged-in' class='container' style='display:none;'>
+		<center><div style='margin:20px;'>
+			<h1>You must be logged in to MetaMask</h1>
+		</div>
+		<div>
+			<img src='/img/login-metamask.png'>
+			<div style='margin:20px;'>
+				<div style='margin:10px;'>
+					<p>You have MetaMask installed, but you're not logged in. You need to be logged in to your MetaMask Ethereum wallet in order to use Locke Pocket. If you're not sure how to use MetaMask, check out <a href='https://www.cryptocompare.com/wallets/guides/how-to-use-metamask/'>this tutorial</a>. For more information, check out <a href='https://metamask.io/'>the MetaMask website</a>.</p>
+				</div>
+			</div>
+		</div></center>
+	</div>
+	<div id='wrong-browser' class='container' style='display:none'>
+		<center><div style='margin:20px;'>
+			<h1>Locke Pocket requires MetaMask</h1>
+		</div>
+		<div>
+			<img src='/img/browser-metamask.png'>
+			<div style='margin:10px;'>
+				<h2>Get a Browser that Supports MetaMask</h2>
+				<p><a href='https://www.google.com/chrome/'>Google Chrome</a> | <a href='https://www.mozilla.org/en-US/firefox/new/'>Mozilla Firefox</a> | <a href='http://www.opera.com/download'>Opera</a> | <a href='https://brave.com/'>Brave</a></p>
+			</div>
+			<div style='margin:20px;'>
+				<div style='margin:10px;'>
+					<h1>What is MetaMask?</h1>
+					<p>MetaMask is an extension for Google Chrome that allows the Chrome browser to interact with the Ethereum blockchain. MetaMask also has a built in Ethereum wallet - this is the wallet that your Locke tokens must be stored in to use the Locke Pocket Wallet.</p>
+				</div>
+				<div style='margin:10px;'>
+					<h1>Why does Locke Pocket need MetaMask?</h1>
+					<p>Locke is an ERC-20 token built on the Ethereum blockchain. This means that, in order to interact with the Locke token, your browser must be able to interact with the Ethereum blockchain. The incredible security of the MetaMask wallet also ensures that your Locke tokens will be as safe as possible.</p>
+				</div>
+				<div style='margin:10px;'>
+					<h1>Is MetaMask safe?</h1>
+					<p>MetaMask is extremely trusted and widely used by the Ethereum community. Your private keys are stored on your machine and encrypted with your MetaMask password, ensuring the security of your MetaMask Ethereum wallet. Many of the Ethereum community's most trusted Ethereum web applications use MetaMask for its ease-of-use and security, including <a href='https://www.myetherwallet.com/'>MyEtherWallet</a>. If you have any reservations about the security of MetaMask, feel free to review their <a href='https://github.com/MetaMask/metamask-plugin'>GitHub</a>. MetaMask is open source!</p>
+					<p>For more information, check out <a href='https://metamask.io/'>the MetaMask website</a>.</p>
+				</div>
+
+			</div>
+		</div></center>
+	</div>
+	<script src='/js/index.js?v1.0'></script>
+</body>
+</html>

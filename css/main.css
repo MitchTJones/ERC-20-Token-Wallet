@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Hind|Monda|Montserrat|Oswald|Oxygen|PT+Sans+Caption|Questrial|Source+Sans+Pro|Ubuntu');
+
+* {
+	margin:0;
+	padding:0;
+	font-family: 'Questrial', sans-serif;
+}
+
+p, h1, h2, h3 {
+	margin:0;
+	padding:0;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+	padding:0;
+	margin:0;
+
+}
+
+#particles-js{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+
+.invert {
+	filter:invert(100%);
+}
+
+#logo {
+	height:95px;
+	margin:20px;
+}
+
+#topbar {
+	width:100%;
+	background-color:#222;
+}
+
+#title {
+	margin:0;
+	padding:20px;
+	color:#f1f1f1;
+}
+
+#main {
+	margin-top:20px;
+}
+
+.section {
+	margin-top:30px;
+	box-shadow: 1px 3px 15px 0px rgba(0, 0, 0, 0.14);
+	background-color:white;
+}
+
+.section .inner {
+	padding:20px;
+}
+
+.wide {
+	width:100%;
+}
+
+#address {
+	font-size:1vw;
+}
+
+.txDiv {
+	display:flex;
+	display:-webkit-flex;
+}
+
+#txList {
+	width:100%;
+	margin-top:0;
+}
+
+.tx {
+	display:flex;
+	display:-webkit-flex;
+	flex-direction:row;
+	justify-content:space-between;
+	color:black;
+}
+
+.tx > p:nth-of-type(1) { width:60%; }
+.tx > p:nth-of-type(2) { width:20%; }
+.tx > p:nth-of-type(3) { width:20%; text-align:right; }
+
+
+.txInput {
+	margin-left:20px;
+	flex-grow:1;
+	-webkit-flex-grow:1;
+}
+
+#send {
+	margin-left:15px;
+	padding:0px 10px 0px 10px;
+}
+
+.button {
+	border:none;
+	background-color:#222;
+	color:#f1f1f1;
+	text-align:center;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+#balance {
+	font-size:60px;
+}
+
+#qr-address {
+	margin-top:10px;
+	width:60%;
+}
+
+.section-title {
+	width:100%;
+	padding:5px;
+	text-align:center;
+	background-color:#222;
+	color:#f1f1f1;
+}
+
+.locke {
+	background-color:#222;
+	color:white;
+}
+
+#resources {
+	display:flex;
+	flex-direction:column;
+}
+
+.resource {
+	flex-grow:1;
+	background-color:#dddddd;
+	color:black;
+}
